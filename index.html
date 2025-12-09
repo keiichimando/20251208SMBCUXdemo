@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMBC スマート受付DX（モック）</title>
+  <style>
+    :root { --green:#004731; --gray:#f5f5f5; --text:#222; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif; color:var(--text); background:#fff; }
+    header, footer { background:var(--gray); }
+    header { padding:12px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #e5e5e5; }
+    .brand { color:var(--green); font-weight:700; }
+    nav a { margin-left:16px; color:#555; text-decoration:none; font-size:14px; }
+    .btn { display:inline-block; padding:10px 16px; border-radius:6px; text-decoration:none; }
+    .btn-primary { background:var(--green); color:#fff; }
+    .container { max-width:1024px; margin:0 auto; padding:24px; }
+    .hero { padding:28px; border:1px solid #eee; border-radius:12px; background:#fff; }
+    h1 { margin:0 0 8px; font-size:24px; }
+    p.lead { margin:0 0 16px; color:#444; }
+    .grid3 { display:grid; grid-template-columns:1fr; gap:12px; }
+    @media(min-width:800px){ .grid3 { grid-template-columns:repeat(3,1fr); } }
+    .card { border:1px solid #eee; border-radius:10px; padding:16px; background:#fff; }
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#eaf6f1; color:var(--green); font-size:13px; margin-right:8px; }
+    .mock { height:140px; border:2px dashed #d0d0d0; border-radius:10px; background:#fafafa; display:flex; align-items:center; justify-content:center; color:#999; font-size:13px; }
+    footer { margin-top:20px; padding:16px 20px; font-size:12px; color:#666; border-top:1px solid #e5e5e5; }
+    small.note { color:#666; display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="brand" aria-label="サイト名">SMBC スマート受付DX</div>
+    <nav aria-label="主要ナビゲーション">
+      <a href="#features">機能</a>
+      <a href="#exclusive">ドコモExclusive</a>
+      <a href="#gallery">画面イメージ</a>
+      <a href="#" class="btn">dアカウントでログイン</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- ヒーロー -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">来店予約・受付・順番待ちを、スマホでスマートに。</h1>
+      <p class="lead">混雑予測＋リアルタイム可視化で、待ち時間を見える化。</p>
+      <a class="btn btn-primary" aria-label="来店予約ボタン">来店予約</a>
+      <small class="note">dアカウント連携でスムーズ認証。追加登録は不要です。</small>
+    </section>
+
+    <!-- 機能概要 -->
+    <section id="features" aria-labelledby="features-title" style="margin-top:20px;">
+      <h2 id="features-title" style="font-size:18px;">機能概要</h2>
+      <div class="grid3">
+        <div class="card">
+          <strong>来店予約</strong>
+          <div class="mock" aria-label="予約UIのダミー枠">店舗選択 / 日時 / 連絡先</div>
+        </div>
+        <div class="card">
+          <strong>受付・順番待ち</strong>
+          <div class="mock" aria-label="受付UIのダミー枠">番号札 #A103 / 推定待ち</div>
+        </div>
+        <div class="card">
+          <strong>混雑予測＋可視化</strong>
+          <div class="mock" aria-label="可視化UIのダミー枠">折れ線グラフ / 進捗バー</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ドコモExclusive -->
+    <section id="exclusive" aria-labelledby="exclusive-title" style="margin-top:20px;">
+      <h2 id="exclusive-title" style="font-size:18px;">ドコモならではの付加価値</h2>
+      <div class="card">
+        <span class="badge" aria-label="dアカウント連携">dアカウント連携（追加登録不要）</span>
+        <span class="badge" aria-label="dポイント連動">予約＆来店完了でdポイント付与</span>
+        <span class="badge" aria-label="5G QoS優先接続">店内で優先接続（5G QoS）</span>
+      </div>
+      <small class="note">ポイント付与条件はキャンペーンにより異なる場合があります。QoS提供は店舗・時間帯で変動します。</small>
+    </section>
+
+    <!-- 簡易ギャラリー（画面イメージ） -->
+    <section id="gallery" aria-labelledby="gallery-title" style="margin-top:20px;">
+      <h2 id="gallery-title" style="font-size:18px;">画面イメージ</h2>
+      <div class="grid3">
+        <div class="card">
+          <div class="mock">来店予約画面（ダミー）</div>
+        </div>
+        <div class="card">
+          <div class="mock">受付・発券画面（ダミー）</div>
+        </div>
+        <div class="card">
+          <div class="mock">順番待ち状況（ダミー）</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div>© 2025 SMBC Smart Reception DX（モック）</div>
+    <div>表示の待ち時間は目安です。状況により前後する場合があります。</div>
+  </footer>
+</body>
+</html>
