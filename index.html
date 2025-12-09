@@ -47,8 +47,8 @@
     .login .status .dlogo { display:inline-block; width:18px; height:18px; border-radius:50%; background:var(--red); color:#fff; font-weight:900; font-size:12px; line-height:18px; text-align:center; }
     .login .mode { padding:6px 10px; border-radius:999px; background:#eaf6f1; color:var(--green); font-weight:700; font-size:12px; border:1px solid #cfe7db; }
 
-    /* 特典バッジ（背景緑＋文字赤） */
-    .exclusive-badge { display:inline-block; padding:8px 12px; border-radius:10px; background:var(--green); color:var(--red); font-weight:800; border:2px solid #022c1d; margin-right:8px; }
+    /* 特典バッジ（従来スタイルに戻す：背景薄緑＋文字緑） */
+    .exclusive-badge { display:inline-block; padding:8px 12px; border-radius:10px; background:var(--accent); color:var(--green); font-weight:800; border:1px solid #cfe7db; margin-right:8px; }
   </style>
 </head>
 <body>
@@ -57,7 +57,6 @@
     <nav aria-label="主要ナビゲーション">
       <a href="#features">来店メニュー</a>
       <a href="#exclusive">dアカウントログイン特典</a>
-      <a href="#gallery">画面イメージ</a>
     </nav>
     <div class="login" aria-label="ログインステータス">
       <div class="status" title="dアカウントでログイン中">
@@ -76,7 +75,7 @@
       <small class="note">dアカウント連携でスムーズ認証。追加登録は不要です。</small>
     </section>
 
-    <!-- 来店メニュー（旧：機能概要） -->
+    <!-- 来店メニュー -->
     <section id="features" aria-labelledby="features-title" style="margin-top:20px;">
       <h2 id="features-title">来店メニュー</h2>
       <div class="grid3">
@@ -120,7 +119,7 @@
       </div>
     </section>
 
-    <!-- dアカウントログイン特典（旧：ドコモならではの付加価値） -->
+    <!-- dアカウントログイン特典 -->
     <section id="exclusive" aria-labelledby="exclusive-title" style="margin-top:20px;">
       <h2 id="exclusive-title">dアカウントログイン特典</h2>
       <div class="card" aria-label="特典一覧">
@@ -129,15 +128,6 @@
         <span class="exclusive-badge">店内で優先接続（5G）</span>
       </div>
       <small class="note">特典の提供状況は店舗・時間帯・キャンペーンにより異なる場合があります。</small>
-    </section>
-
-    <section id="gallery" aria-labelledby="gallery-title" style="margin-top:20px;">
-      <h2 id="gallery-title">画面イメージ</h2>
-      <div class="grid3">
-        <div class="card"><div class="inline-note">来店予約画面（空き時間候補）</div></div>
-        <div class="card"><div class="inline-note">受付・発券（待ち札）</div></div>
-        <div class="card"><div class="inline-note">混雑予測（40分待ち）</div></div>
-      </div>
     </section>
   </main>
 
