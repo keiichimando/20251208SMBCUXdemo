@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SMBC スマート受付DX｜ドコモExclusive（モック）</title>
   <style>
-    :root { --green:#004731; --gray:#f5f5f5; --text:#222; --accent:#eaf6f1; }
+    :root { --green:#004731; --gray:#f5f5f5; --text:#222; --accent:#eaf6f1; --red:#d6002f; }
     * { box-sizing:border-box; }
     body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif; color:var(--text); background:#fff; }
     header, footer { background:var(--gray); }
     header { padding:12px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #e5e5e5; }
-    .brand { color:var(--green); font-weight:700; }
-    nav a { margin-left:16px; color:#555; text-decoration:none; font-size:14px; }
+    .brand { color:var(--green); font-weight:800; letter-spacing:0.2px; }
+    nav { display:flex; align-items:center; gap:16px; }
+    nav a { color:#555; text-decoration:none; font-size:14px; }
     .btn { display:inline-block; padding:10px 16px; border-radius:8px; text-decoration:none; cursor:pointer; }
     .btn-primary { background:var(--green); color:#fff; }
     .btn-primary:hover { background:#003822; }
     .container { max-width:1064px; margin:0 auto; padding:24px; }
     .hero { padding:28px; border:1px solid #eee; border-radius:12px; background:#fff; }
-    h1 { margin:0 0 8px; font-size:26px; font-weight:700; letter-spacing:0.2px; }
+    h1 { margin:0 0 8px; font-size:26px; font-weight:800; letter-spacing:0.2px; }
     p.lead { margin:0 0 16px; color:#444; }
     h2 { font-size:18px; margin:0 0 10px; }
     .grid3 { display:grid; grid-template-columns:1fr; gap:12px; }
     @media(min-width:800px){ .grid3 { grid-template-columns:repeat(3,1fr); } }
     .card { border:1px solid #eee; border-radius:12px; padding:16px; background:#fff; }
-    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:var(--accent); color:var(--green); font-size:13px; margin-right:8px; }
     .inline-note { font-size:12px; color:#666; margin-top:6px; }
     .slots { display:flex; flex-wrap:wrap; gap:8px; }
     .slot { padding:10px 12px; border:1px solid #ddd; border-radius:8px; font-size:14px; background:#fff; }
@@ -41,19 +41,31 @@
     .bar { height:10px; background:#eee; border-radius:6px; }
     .fill { width:60%; height:10px; background:var(--green); border-radius:6px; }
 
-    footer { margin-top:24px; padding:16px 20px; font-size:12px; color:#666; border-top:1px solid #e5e5e5; }
-    small.note { color:#666; display:block; margin-top:8px; }
+    /* Login status (header right) */
+    .login { display:flex; align-items:center; gap:8px; }
+    .login .status { display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#fff; border:2px solid var(--green); font-weight:800; color:#222; }
+    .login .status .dlogo { display:inline-block; width:18px; height:18px; border-radius:50%; background:var(--red); color:#fff; font-weight:900; font-size:12px; line-height:18px; text-align:center; }
+    .login .mode { padding:6px 10px; border-radius:999px; background:#eaf6f1; color:var(--green); font-weight:700; font-size:12px; border:1px solid #cfe7db; }
+
+    /* 特典バッジ（背景緑＋文字赤） */
+    .exclusive-badge { display:inline-block; padding:8px 12px; border-radius:10px; background:var(--green); color:var(--red); font-weight:800; border:2px solid #022c1d; margin-right:8px; }
   </style>
 </head>
 <body>
   <header role="banner">
     <div class="brand" aria-label="サイト名">SMBC スマート受付DX</div>
     <nav aria-label="主要ナビゲーション">
-      <a href="#features">機能</a>
-      <a href="#exclusive">ドコモExclusive</a>
+      <a href="#features">来店メニュー</a>
+      <a href="#exclusive">dアカウントログイン特典</a>
       <a href="#gallery">画面イメージ</a>
-      <a href="#" class="btn">dアカウントでログイン</a>
     </nav>
+    <div class="login" aria-label="ログインステータス">
+      <div class="status" title="dアカウントでログイン中">
+        <span class="dlogo" aria-hidden="true">d</span>
+        <span><strong>山田 太郎 様</strong> ／ dアカウントで<strong>ログイン中</strong></span>
+      </div>
+      <span class="mode" title="Exclusiveモード">Exclusive モード</span>
+    </div>
   </header>
 
   <main class="container">
@@ -64,10 +76,10 @@
       <small class="note">dアカウント連携でスムーズ認証。追加登録は不要です。</small>
     </section>
 
+    <!-- 来店メニュー（旧：機能概要） -->
     <section id="features" aria-labelledby="features-title" style="margin-top:20px;">
-      <h2 id="features-title">機能概要</h2>
+      <h2 id="features-title">来店メニュー</h2>
       <div class="grid3">
-        <!-- 来店予約 -->
         <div class="card" id="reservation">
           <strong>来店予約</strong>
           <div class="inline-note">空き時間（ダミー）から選択できます。</div>
@@ -82,7 +94,6 @@
           </div>
         </div>
 
-        <!-- 受付・順番待ち（待ち札） -->
         <div class="card">
           <strong>受付・順番待ち</strong>
           <div class="inline-note">「待ち札を引く」ボタンで番号札が表示されます（ダミー）。</div>
@@ -96,7 +107,6 @@
           <div class="inline-note">推定待ち時間：15分 ／ 前の人数：4人</div>
         </div>
 
-        <!-- 混雑予測＋可視化 -->
         <div class="card">
           <strong>混雑予測＋可視化</strong>
           <div class="wait-banner" role="status">現在 約 <strong>40分</strong> 待ち（目安）</div>
@@ -110,14 +120,15 @@
       </div>
     </section>
 
+    <!-- dアカウントログイン特典（旧：ドコモならではの付加価値） -->
     <section id="exclusive" aria-labelledby="exclusive-title" style="margin-top:20px;">
-      <h2 id="exclusive-title">ドコモならではの付加価値</h2>
-      <div class="card">
-        <span class="badge" aria-label="dアカウント連携">dアカウント連携（追加登録不要）</span>
-        <span class="badge" aria-label="dポイント連動">予約＆来店完了でdポイント付与</span>
-        <span class="badge" aria-label="5G QoS優先接続">店内で優先接続（5G QoS）</span>
+      <h2 id="exclusive-title">dアカウントログイン特典</h2>
+      <div class="card" aria-label="特典一覧">
+        <span class="exclusive-badge">優先来店予約モード</span>
+        <span class="exclusive-badge">予約＆来店完了でdポイント付与</span>
+        <span class="exclusive-badge">店内で優先接続（5G）</span>
       </div>
-      <small class="note">ポイント付与条件はキャンペーンにより異なる場合があります。QoS提供は店舗・時間帯で変動します。</small>
+      <small class="note">特典の提供状況は店舗・時間帯・キャンペーンにより異なる場合があります。</small>
     </section>
 
     <section id="gallery" aria-labelledby="gallery-title" style="margin-top:20px;">
